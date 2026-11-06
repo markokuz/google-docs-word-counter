@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Google Docs Word Counter",
+  "version": "1.0",
+  "description": "Auto-enables the native 'Display word count while typing' on Google Docs",
+  "icons": {
+    "16": "Icons/icon16.png",
+    "48": "Icons/icon48.png",
+    "128": "Icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://docs.google.com/document/d/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "world": "MAIN"
+    }
+  ]
+}
