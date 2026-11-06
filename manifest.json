@@ -8,12 +8,22 @@
     "48": "Icons/icon48.png",
     "128": "Icons/icon128.png"
   },
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Google Docs Word Counter"
+  },
   "content_scripts": [
     {
       "matches": ["https://docs.google.com/document/d/*"],
       "js": ["content.js"],
       "run_at": "document_idle",
       "world": "MAIN"
+    },
+    {
+      "matches": ["https://docs.google.com/document/d/*"],
+      "js": ["pixel.js", "garden.js"],
+      "run_at": "document_idle"
     }
   ]
 }

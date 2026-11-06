@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Google Docs Word Counter</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 12px;
+      width: max-content;
+      background: #f9fbfd;
+      border: 3px solid #2f7d32;
+    }
+    #garden { margin: 0 auto; width: max-content; }
+    #flower-switch {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      width: 100%;
+      padding: 8px;
+      background: #fff;
+      border: 3px solid #2f7d32;
+      border-radius: 0;
+      box-shadow: 3px 3px 0 #2f7d32;
+      cursor: pointer;
+    }
+    #flower-switch:active { transform: translate(3px, 3px); box-shadow: none; }
+    #flower-switch:focus-visible { outline: 3px solid #4c8bf5; outline-offset: 2px; }
+    /* Wide enough for "OFF" so the popup doesn't resize when toggled. */
+    #state { display: flex; justify-content: center; min-width: 22px; padding: 3px 4px; }
+  </style>
+</head>
+<body>
+  <div id="garden"></div>
+  <button id="flower-switch" type="button" role="switch" aria-label="Flowers">
+    <span id="label"></span>
+    <span id="state"></span>
+  </button>
+  <script src="pixel.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
